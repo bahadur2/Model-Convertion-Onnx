@@ -43,7 +43,7 @@ sudo systemctl status myapp
 ```
 2. Nginx setup
 ```
-sudo apt-get install nginx
+sudo apt-get install nginx php7.4-fpm php7.4 php7.4-json
 sudo usermod ubuntu -g www-data
 ```
 create nginx configuration file:
