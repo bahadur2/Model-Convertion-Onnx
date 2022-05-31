@@ -1,18 +1,18 @@
-#Simple API Using Opencv with AI model
+# Simple API Using Opencv with AI model
 
-##To Start Services 
+## To Start Services 
 ```
 sudo cp ai_test_server.service /etc/systemd/system/
 sudo systemctl start ai_test_server
 sudo systemctl enable ai_test_server
 ```
-##To Check service is runing 
+## To Check service is runing 
 ```
 sudo systemctl status ai_test_server
 ```
 
 
-##Tuturial
+## Tuturial
 
 > Before we setup nginx,we need to setup gunicorn such that it can be started by systemd. This is required for nginx.
 
@@ -80,14 +80,17 @@ app.logger.handlers = gunicorn_logger.handlers
 app.logger.setLevel(gunicorn_logger.level)
 ```
 commands to start and stop server:
-```
+
 Gunicorn:
+```
 ps -ef|grep gunicorn    
 sudo systemctl enable myapp
 sudo systemctl status myapp
 sudo systemctl start myapp
 sudo systemctl stop myapp
+```
 Nginx:
+```
 ps -ef | grep nginx
 sudo systemctl status nginx.service
 sudo systemctl start nginx 
