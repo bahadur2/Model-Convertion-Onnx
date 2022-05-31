@@ -1,0 +1,13 @@
+[Unit]
+Description=ai_test_server flask
+After=network.target
+
+[Service]
+User=khan
+WorkingDirectory=/home/khan/test_server
+Environment="PATH=/home/khan/anaconda3/bin"
+ExecStart=/home/khan/anaconda3/envs/test_server/bin/gunicorn --bind 0.0.0.0:6000 wsgi:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
