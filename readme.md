@@ -12,7 +12,7 @@ sudo systemctl status ai_test_server
 ```
 
 
-## Tuturial
+## Tutorial
 
 > Before we setup nginx,we need to setup gunicorn such that it can be started by systemd. This is required for nginx.
 
