@@ -196,7 +196,7 @@ def Classification_detection():
                     img = cv2.imread(input_image)
                     classIds, scores, boxes = model.detect(img, confThreshold=0.3, nmsThreshold=0.1)
                     
-                    if len(classIds) == 0:
+                    if len(classIds) < 1:
                         cv2.putText(img, "DR Negative", (20,100), cv2.FONT_HERSHEY_SIMPLEX, 3, color=(255, 255, 255), thickness=2)
                     else:
                         cv2.putText(img, "DR Positive", (20,100), cv2.FONT_HERSHEY_SIMPLEX, 3, color=(255, 255, 255), thickness=2)
@@ -205,7 +205,7 @@ def Classification_detection():
                             center_coordinate = (int(box[0] + (box[2]/2)) , int(box[1] + (box[3]/2)))
                             cv2.circle(img,center_coordinate,radius=box[3], color=(0, 255, 0), thickness=3)
                         
-                            text = '%s' % (classes[classId[0]])
+                            text = '%s' % (classes[classId[0]]) #remove the [0] if you get index error
                             cv2.putText(img, text, (box[0], box[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 1,
                                         color=(0, 255, 0), thickness=2)
                             
