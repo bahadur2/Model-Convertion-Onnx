@@ -169,7 +169,7 @@ def DR_Quick():
 
 
 
-@app.route('/Detection_API/', methods = ['GET', 'POST'])
+@app.route('/Detection_API/api/v1/detect', methods = ['GET', 'POST'])
 def Classification_detection():
     if request.method == 'POST':
         # check if the post request has the file part
