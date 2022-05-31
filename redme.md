@@ -1,1 +1,0 @@
-Simple API Using Opencv with AI model
